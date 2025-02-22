@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Memory Match Challenge</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="game-container">
+        <h1>Memory Match Challenge</h1>
+        
+        <!-- Game Instructions Modal -->
+        <div id="instructionsModal" class="modal">
+            <div class="modal-content">
+                <span class="close-button">&times;</span>
+                <h2>How to Play</h2>
+                <ul>
+                    <li>Flip cards by clicking on them to find matching pairs</li>
+                    <li>You have a limited number of moves to find all pairs</li>
+                    <li>The game has three difficulty levels:
+                        <ul>
+                            <li>Easy: 4×4 grid, 25 moves limit</li>
+                            <li>Medium: 4×5 grid, 30 moves limit</li>
+                            <li>Hard: 5×6 grid, 45 moves limit</li>
+                        </ul>
+                    </li>
+                    <li>Timer starts when you flip the first card</li>
+                    <li>Match all pairs before running out of moves to win!</li>
+                </ul>
+                <button id="start-game-button">Start Game</button>
+            </div>
+        </div>
+        
+        <!-- Difficulty Selection -->
+        <div class="difficulty-selector">
+            <button class="difficulty-button selected" data-difficulty="easy">Easy</button>
+            <button class="difficulty-button" data-difficulty="medium">Medium</button>
+            <button class="difficulty-button" data-difficulty="hard">Hard</button>
+            <button id="instructions-button">Instructions</button>
+        </div>
+        
+        <!-- Game Stats -->
+        <div class="stats">
+            <div class="stat-item">Moves: <span id="moves">0</span>/<span id="max-moves">25</span></div>
+            <div class="stat-item">Matches: <span id="matches">0</span>/<span id="total-pairs">8</span></div>
+            <div class="stat-item">Time: <span id="timer">0</span>s</div>
+        </div>
+        
+        <!-- Game Progress Bar -->
+        <div class="progress-container">
+            <div id="moves-progress" class="progress-bar"></div>
+        </div>
+        
+        <!-- Game Grid -->
+        <div class="game-grid" id="gameGrid"></div>
+        
+        <!-- Game Controls -->
+        <div class="game-controls">
+            <button id="reset-button">Reset Game</button>
+            <button id="hint-button">Use Hint</button>
+        </div>
+        
+        <!-- Result Modal -->
+        <div id="resultModal" class="modal">
+            <div class="modal-content">
+                <h2 id="result-title">Game Over</h2>
+                <p id="result-message"></p>
+                <div id="result-stats"></div>
+                <button id="play-again-button">Play Again</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="interaction.js"></script>
+</body>
+</html>
